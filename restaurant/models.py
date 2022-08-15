@@ -8,7 +8,6 @@ class Booking(models.Model):
     """
     data information from costumers about booking table
     """
-
     fname = models.CharField(max_length=100)
     lname = models.CharField(max_length=100)
     email = models.EmailField(max_length=100, blank=True)
