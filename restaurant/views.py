@@ -1,15 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.views import generic
 from .models import Booking
-
-# Create your views here.
-
-def index(request):
-    bookings_info = Booking.objects.all()
-    return render(request, 'index.html', {'info': bookings_info})
-
-def booking_table(request):
-     return render(request, 'booking_table.html', {})
+from .forms import BookingForm
 
 
-def staff(request):
-     return render(request, 'staff.html', {})
+class BookingList(generic.ListView):
+    model = Booking
+    queryset = Booking.objects.order_by('date')
+    template_name = 'index.html'
+    paginate_by = 10

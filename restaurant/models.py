@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
@@ -13,7 +14,10 @@ class Booking(models.Model):
     email = models.EmailField(max_length=100, blank=True)
     guests = models.PositiveSmallIntegerField()
     date = models.DateTimeField()
-    info = models.TextField(max_length=500)
+    info = models.TextField(max_length=500, blank=True)
+
+    class Meta:
+        ordering = ['date']
 
     def __str__(self):
         return f"{self.fname} {self.lname} day: {self.date}"
