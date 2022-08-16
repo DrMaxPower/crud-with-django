@@ -7,15 +7,10 @@
 
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
-            <div class="row">
-            {% for booking in booking_list %}
-                <p>{{ booking.fname }} {{ booking.lname }} {{ booking.date }}</p>
-            {% if forloop.counter|divisibleby:5 %}
-            </div>
-            <div class="row">
-            {% endif %}
+            {% for item in all %}
+                <p>{{ item }}</p>
+                <hr>
             {% endfor %}
-            </div>
         </div>
     </div>
 

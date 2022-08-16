@@ -1,11 +1,19 @@
-from django.shortcuts import render, redirect
-from django.views import generic
+from django.shortcuts import render 
+from django.views import generic, View
 from .models import Booking
 from .forms import BookingForm
 
 
-class BookingList(generic.ListView):
-    model = Booking
-    queryset = Booking.objects.order_by('date')
-    template_name = 'index.html'
-    paginate_by = 10
+def home(request):
+    all_booking = Booking.objects.order_by('date').all
+    return render(request, 'index.html', {'all':all_booking})
+
+
+def booking(request):
+    if request.method == 'POST':
+        form = BookingForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+        return render(request, 'booking.html', {})
+    else:
+        return render(request, 'booking.html', {})
