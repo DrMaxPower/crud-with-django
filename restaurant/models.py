@@ -20,7 +20,7 @@ class Booking(models.Model):
         ordering = ['date']
 
     def __str__(self):
-        return f"{self.fname} {self.lname} day: {self.date}"
+        return f"{self.fname} {self.lname} {self.date}"
 
 
 class Menu(models.Model):

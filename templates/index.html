@@ -2,18 +2,13 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
+<div class="container">
+    <div class="section">
             {% for item in all %}
-                <p>{{ item }}</p>
+                <h5>{{ item.date| date:"m d" }}</h5>
+                <p>{{ item.fname }} {{item.lname}} {{ item.date| date:"F d Y" }}<</p>
                 <hr>
             {% endfor %}
-        </div>
     </div>
-
 </div>
-
 {%endblock%}

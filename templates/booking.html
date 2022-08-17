@@ -1,35 +1,71 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+  </div>
+  {% load static %}
+  <div class="parallax"><img src="{% static 'images/lake-g9469f9732_1920.jpg' %}" alt="Unsplashed background img 1">
+  </div>
+</div>
+{% if messages %}
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+{% endif %}
+<div class="container">
+  <div class="section">
+    <h1 class="header center amber-text text-darken-4">Book a Table</h1>
+    <form method="POST" action="{% url 'booking' %}" class="col s12">
+      {% csrf_token %}
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" type="text" class="validate" value="{{ fname }}" name="fname">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate" name="lname" value="{{ lname }}">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate" value="{{ email }}" name="email">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div>
+          <i class="material-icons prefix">people</i>
+          <label>
+            <input id="number" type="number" value="{{ guests }}" id="guests" name="guests" >
+          </label>
+      </div>
+      <div>
+        <i class="material-icons prefix">date_range</i>
+        <input type="text" class="datepicker" id="date" name="date" value="{{ date }}">
+      </div>
+      <div>
+        <i class="material-icons">access_time</i>
+        <input type="text" class="timepicker">
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">textsms</i>
+        <input type="text" id="autocomplete-input" class="autocomplete" name="info" id="info" value="{{ info }}">
+        <label for="autocomplete-input">Good to know information</label>
+      </div>
+      <button class="btn amber accent-4 hoverable" type="submit" name="action">Submit Booking
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+</div>
 
-<h1>Join Today</h1>
-<form method="POST" action="{% url 'booking' %}">
-    {% csrf_token %}
-    <div class="form-group">
-        <input type="text" class="form-control" id="fname" name="fname" 
-        aria-describedby="fname" placeholder="First Name" value="{{ fname }}">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" id="lname" name="lname" 
-        aria-describedby="lname" placeholder="Last Name" value="{{ lname }}">
-    </div>
-    <div class="form-group">
-      <input type="email" class="form-control" id="exampleInputEmail1" name="email" 
-      aria-describedby="emailHelp" placeholder="Enter email" value="{{ email }}">
-    </div>
-    <div class="form-group">
-        <input type="number" class="form-control" id="guests" name="guests"
-        aria-describedby="guests" placeholder="Guests" value="{{ guests }}">
-    </div>
-    <div class="form-group">
-        <input type="date" class="form-control" id="date" name="date"
-        aria-describedby="date" placeholder="Date" value="{{ date }}">
-    </div>
-    <div class="form-group">
-        <textarea class="form-control" name="info" 
-        id="info" rows="3" value="{{ info }}"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Send Booking</button>
-  </form>
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+  </div>
+  {% load static %}
+  <div class="parallax"><img src="{% static 'images/lake-g9469f9732_1920.jpg' %}" alt="Unsplashed background img 1">
+  </div>
+</div>
 
 {%endblock%}
