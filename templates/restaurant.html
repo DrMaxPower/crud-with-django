@@ -8,6 +8,9 @@
             {% for item in all %}
             <div class="bookings center s8">
                 <h5 hidden> {{ item.date| date:"d" }} </h5>
+                <h6 hidden> {{ item.date| date:"m" }} </h6>
+                <h7 hidden> {{ item.date| date:"y" }} </h7>
+                <h8 hidden> {{ item.date| date:"H" }} </h8>
                 <div class="divider"></div>
                 <p>{{ item.fname }} {{item.lname}} 
                     <i class="material-icons tiny">access_time</i> {{ item.date| date:"H" }}</p>
