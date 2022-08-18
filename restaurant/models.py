@@ -12,7 +12,7 @@ class Booking(models.Model):
     fname = models.CharField(max_length=100)
     lname = models.CharField(max_length=100, blank=True)
     email = models.EmailField(max_length=100, blank=True)
-    guests = models.PositiveSmallIntegerField(blank=True)
+    guests = models.PositiveSmallIntegerField(blank=True, null=True)
     date = models.DateTimeField()
     info = models.TextField(max_length=500, blank=True)
 

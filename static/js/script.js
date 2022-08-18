@@ -3,24 +3,19 @@
   
       $('.sidenav').sidenav();
       $('.parallax').parallax();
-  
-    }); 
+      
+    });
+    
+    $(function() {
+      let allDates = $('div.bookings').children('h5') 
+      let today = new Date()
+      let dayInt = today.getDate()
+      for (let i = 0; i < allDates.length; i++) {
+        if (parseInt(allDates[i].textContent) === dayInt){
+          let parent = allDates[i].parentNode
+          $(parent).addClass('teal lighten-5 z-depth-2')
+        }
+      }
+    })
+
   })(jQuery); 
-
-  $(document).ready(function(){
-    $('.datepicker').datepicker();
-    $('.timepicker').timepicker();
-  });
-
-  // Change color of p set on todays date in index
-  // simple setup.. 
-  // let today = new Date()
-  // let dayInt = today.getDate()
-  // let monthInt = today.getMonth() + 1
-  // get mote specific then p
-  // let pDateFromDjango = $('p').text()
-  // => 08 17
-  // join numbers
-  //  check if numberstring is equal
-  // if equal add light green color to paragraphs
-  // make shore it will only color "todays" paragraph

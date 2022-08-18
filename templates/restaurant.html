@@ -4,10 +4,15 @@
 {% block content %}
 <div class="container">
     <div class="section">
+        <h3 class="header center amber-text text-darken-4">All Bookings</h3>
             {% for item in all %}
-                <h5>{{ item.date| date:"m d" }}</h5>
-                <p>{{ item.fname }} {{item.lname}} {{ item.date| date:"F d Y" }}<</p>
-                <hr>
+            <div class="bookings center s8">
+                <h5 hidden> {{ item.date| date:"d" }} </h5>
+                <div class="divider"></div>
+                <p>{{ item.fname }} {{item.lname}} 
+                    <i class="material-icons tiny">access_time</i> {{ item.date| date:"H" }}</p>
+                <div class="divider"></div>
+            </div>
             {% endfor %}
     </div>
 </div>
