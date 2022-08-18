@@ -10,9 +10,9 @@ class Booking(models.Model):
     data information from costumers about booking table
     """
     fname = models.CharField(max_length=100)
-    lname = models.CharField(max_length=100)
+    lname = models.CharField(max_length=100, blank=True)
     email = models.EmailField(max_length=100, blank=True)
-    guests = models.PositiveSmallIntegerField()
+    guests = models.PositiveSmallIntegerField(blank=True)
     date = models.DateTimeField()
     info = models.TextField(max_length=500, blank=True)
 

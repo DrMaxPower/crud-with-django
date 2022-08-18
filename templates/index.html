@@ -2,13 +2,139 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="section">
-            {% for item in all %}
-                <h5>{{ item.date| date:"m d" }}</h5>
-                <p>{{ item.fname }} {{item.lname}} {{ item.date| date:"F d Y" }}<</p>
-                <hr>
-            {% endfor %}
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br><br>
+            <h1 class="header center amber-text text-darken-4">Restaurant</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">Best restaurant in town</h5>
+            </div>
+            <div class="row center">
+                <a href="{% url 'booking' %}" id="download-button"
+                    class="btn-large waves-effect waves-light amber lighten-1">Book a Table</a>
+            </div>
+            <br><br>
+
+        </div>
+    </div>
+    {% load static %}
+    <div class="parallax"><img src="{% static 'images/lake-g9469f9732_1920.jpg' %}" alt="Unsplashed background img 1">
     </div>
 </div>
+
+
+<div class="container">
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">local_cafe</i></h2>
+                    <h5 class="center">Breakfast</h5>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="{% static 'images/pexels-julian-jagtenberg-103124.jpg' %}">
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">local_dining</i></h2>
+                    <h5 class="center">Lunch</h5>
+                    
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="{% static 'images/pexels-foodie-factor-539451.jpg' %}">
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">local_bar</i></h2>
+                    <h5 class="center">Dinner</h5>
+
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="{% static 'images/pexels-pixabay-262978.jpg' %}">
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="{% static 'images/background2.jpg' %}" alt="Unsplashed background img 2"></div>
+</div>
+
+<div class="container">
+    <div class="section">
+
+        <div class="row">
+            <div class="col s12 center">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <h4>Contact Us</h4>
+                <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque
+                    id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut
+                    ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem
+                    neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu
+                    mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum
+                    ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum
+                    primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="{% static 'images/background3.jpg' %}" alt="Unsplashed background img 3"></div>
+</div>
+
+
 {%endblock%}

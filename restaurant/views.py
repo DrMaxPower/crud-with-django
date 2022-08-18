@@ -2,16 +2,18 @@ from django.shortcuts import render, redirect
 from .models import Booking
 from .forms import BookingForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 
 def home(request):
-    all_booking = Booking.objects.order_by('date').all
-    return render(request, 'index.html', {'all':all_booking})
+    return render(request, 'index.html', {})
 
 
+@login_required
 def restaurant(request):
-    return render(request, 'restaurant.html', {})
+    all_booking = Booking.objects.order_by('date').all
+    return render(request, 'restaurant.html', {'all':all_booking})
 
 
 def booking(request):

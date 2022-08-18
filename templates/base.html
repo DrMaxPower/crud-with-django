@@ -17,13 +17,16 @@
     <!-- Navigation -->
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="{% url 'restaurant' %}"
+            <a id="logo-container" href="{% url 'home' %}"
             class="brand-logo brown-text">
             <i class="material-icons prefix">home</i></a>
             <ul class="right hide-on-med-and-down">
                 {% if user.is_authenticated %}
                 <li class="">
                     <a class="amber lighten-4" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                <li class="">
+                    <a class="pink lighten-4" href="{% url 'restaurant' %}">Bookings</a>
                 </li>
                 {% else %}
                 <li class="blue lighten-4">
@@ -39,6 +42,9 @@
                 {% if user.is_authenticated %}
                 <li class="amber lighten-4">
                     <a class="" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                <li class="">
+                    <a class="pink lighten-4" href="{% url 'restaurant' %}">Bookings</a>
                 </li>
                 {% else %}
                 <li class="blue lighten-4">
