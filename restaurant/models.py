@@ -37,12 +37,18 @@ class Menu(models.Model):
         default="lunch")
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100)
+    price = models.DecimalField(
+        blank=True,
+        null=True,
+        max_digits=5,
+        decimal_places=2
+        )
     image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
 
 
     class Meta:
-        ordering = ['type']
+        ordering = ['type', 'price']
 
 
     def __str__(self):

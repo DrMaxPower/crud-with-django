@@ -47,6 +47,6 @@ def booking(request):
 
 
 def menu(request):
-    all_menu = Menu.objects.all
+    all_menu = Menu.objects.order_by('price').all
     return render(request, 'menu.html', {'menu':all_menu})
 

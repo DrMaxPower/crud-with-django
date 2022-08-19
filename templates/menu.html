@@ -1,8 +1,144 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% for item in menu %}
-    <h3>{{ item.title }}</h3>
-{% endfor %}
-<h1>Hello</h1>
+{% load static %}
+
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">A Good Lunch</h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="{% static 'images/background2.jpg' %}" alt="Unsplashed background img 2"></div>
+</div>
+
+<div class="yellow lighten-5">
+    <div class="container">
+        <div class="section scrollspy" id="breakfast">
+            <!-- BREAKFAST SECTION -->
+            <section>
+                <h3 class="header center amber-text text-darken-3">BREAKFAST</h3>
+                    <div class="row">
+                        {% for item in menu %}
+                        {% if item.type == 'breakfast' %}
+                            <div class="col s12 m6">
+                                <div class="card z-depth-3">
+                                    <div class="card-image">
+                                        <img src="{{ item.image.url }}">
+                                        <span class="card-title">{{ item.title | safe }}</span>
+                                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                                class="material-icons">add</i></a>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{ item.content | safe }}</p>
+                                        <h5>£{{ item.price }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">A Good Lunch</h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="{% static 'images/background2.jpg' %}" alt="Unsplashed background img 2"></div>
+</div>
+        
+
+<div class="blue lighten-5">
+    <div class="container">
+        <div class="section">
+            <!-- LUNCH SECTION -->
+            <section class="">
+                <h3 class="header center amber-text text-darken-3">LUNCH</h3>
+                    <div class="row">
+                        {% for item in menu %}
+                        {% if item.type == 'lunch' %}
+                            <div class="col s12 m6">
+                                <div class="card z-depth-3">
+                                    <div class="card-image">
+                                        <img src="{{ item.image.url }}">
+                                        <span class="card-title">{{ item.title | safe }}</span>
+                                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                                class="material-icons">add</i></a>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{ item.content | safe }}</p>
+                                        <h5>£{{ item.price }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">A Good Lunch</h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="{% static 'images/background2.jpg' %}" alt="Unsplashed background img 2"></div>
+</div>
+
+
+<div class="blue-grey darken-4">
+    <div class="container">
+        <div class="section">        
+            <!-- DINNER SECTION -->
+            <section class="">
+                <h3 class="header center amber-text text-darken-3">DINNER</h3>
+                    <div class="row">
+                        {% for item in menu %}
+                        {% if item.type == 'dinner' %}
+                            <div class="col s12 m6">
+                                <div class="card z-depth-3">
+                                    <div class="card-image">
+                                        <img src="{{ item.image.url }}">
+                                        <span class="card-title">{{ item.title | safe }}</span>
+                                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                                class="material-icons">add</i></a>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{ item.content | safe }}</p>
+                                        <h5>£{{ item.price }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
 {%endblock%}

@@ -34,7 +34,7 @@
                     <h2 class="center brown-text">
                         <i class="material-icons">local_cafe</i></h2>
                     <h5 class="center">Breakfast</h5>
-                    <div class="card hoverable scrollspy" id="menu">
+                    <div class="card hoverable">
                         <div class="card-image">
                             <img src="{% static 'images/pexels-julian-jagtenberg-103124.jpg' %}">
                         </div>
@@ -43,7 +43,7 @@
                                 I am convenient because I require little markup to use effectively.</p>
                         </div>
                         <div class="card-action">
-                            <a href="#">This is a link</a>
+                            <a href="{% url 'menu' %}">This is a link</a>
                         </div>        
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                                 I am convenient because I require little markup to use effectively.</p>
                         </div>
                         <div class="card-action">
-                            <a href="#">This is a link</a>
+                            <a href="{% url 'menu' %}">This is a link</a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                                 I am convenient because I require little markup to use effectively.</p>
                         </div>
                         <div class="card-action">
-                            <a href="#">This is a link</a>
+                            <a href="{% url 'menu' %}">This is a link</a>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
     <div class="section">
 
         <div class="row">
-            <div class="col s12 center scrollspy" id="contact">
+            <div class="col s12 center" id="contact">
                 <h3><i class="mdi-content-send brown-text"></i></h3>
                 <h4>Contact Us</h4>
                 <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque
