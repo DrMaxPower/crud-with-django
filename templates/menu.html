@@ -16,77 +16,35 @@
     <div class="parallax"><img src="{% static 'images/background2.jpg' %}" alt="Unsplashed background img 2"></div>
 </div>
 
+
+<!-- BREAKFAST SECTION -->
 <div class="yellow lighten-5">
     <div class="container">
-        <div class="section scrollspy" id="breakfast">
-            <!-- BREAKFAST SECTION -->
+        <div class="section" id="breakfast">
+            <a href="#lunch"><i class="material-icons">local_dining</i></a>
+            <a href="#dinner"><i class="material-icons">local_bar</i></a>
             <section>
                 <h3 class="header center amber-text text-darken-3">BREAKFAST</h3>
-                    <div class="row">
-                        {% for item in menu %}
-                        {% if item.type == 'breakfast' %}
-                            <div class="col s12 m6">
-                                <div class="card z-depth-3">
-                                    <div class="card-image">
-                                        <img src="{{ item.image.url }}">
-                                        <span class="card-title">{{ item.title | safe }}</span>
-                                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                                class="material-icons">add</i></a>
-                                    </div>
-                                    <div class="card-content">
-                                        <p>{{ item.content | safe }}</p>
-                                        <h5>£{{ item.price }}</h5>
-                                    </div>
-                                </div>
+                <div class="row scrollspy">
+                    {% for item in menu %}
+                    {% if item.type == 'breakfast' %}
+                    <div class="col s12 m6">
+                        <div class="card z-depth-3">
+                            <div class="card-image">
+                                <img src="{{ item.image.url }}">
+                                <span class="card-title">{{ item.title | safe }}</span>
+                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                        class="material-icons">add</i></a>
                             </div>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-            </section>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <div class="row center">
-                <h5 class="header col s12 light">A Good Lunch</h5>
-            </div>
-        </div>
-    </div>
-    <div class="parallax"><img src="{% static 'images/background2.jpg' %}" alt="Unsplashed background img 2"></div>
-</div>
-        
-
-<div class="blue lighten-5">
-    <div class="container">
-        <div class="section">
-            <!-- LUNCH SECTION -->
-            <section class="">
-                <h3 class="header center amber-text text-darken-3">LUNCH</h3>
-                    <div class="row">
-                        {% for item in menu %}
-                        {% if item.type == 'lunch' %}
-                            <div class="col s12 m6">
-                                <div class="card z-depth-3">
-                                    <div class="card-image">
-                                        <img src="{{ item.image.url }}">
-                                        <span class="card-title">{{ item.title | safe }}</span>
-                                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                                class="material-icons">add</i></a>
-                                    </div>
-                                    <div class="card-content">
-                                        <p>{{ item.content | safe }}</p>
-                                        <h5>£{{ item.price }}</h5>
-                                    </div>
-                                </div>
+                            <div class="card-content">
+                                <p>{{ item.content | safe }}</p>
+                                <h5>£{{ item.price }}</h5>
                             </div>
-                        {% endif %}
-                        {% endfor %}
+                        </div>
                     </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </section>
         </div>
     </div>
@@ -106,38 +64,87 @@
 </div>
 
 
-<div class="blue-grey darken-4">
+<!-- LUNCH SECTION -->
+<div class="brown lighten-5">
     <div class="container">
-        <div class="section">        
-            <!-- DINNER SECTION -->
+        <div class="section" id="lunch">
+            <a href="#breakfast"><i class="material-icons">local_cafe</i></a>
+            <a href="#dinner"><i class="material-icons">local_bar</i></a>
             <section class="">
-                <h3 class="header center amber-text text-darken-3">DINNER</h3>
-                    <div class="row">
-                        {% for item in menu %}
-                        {% if item.type == 'dinner' %}
-                            <div class="col s12 m6">
-                                <div class="card z-depth-3">
-                                    <div class="card-image">
-                                        <img src="{{ item.image.url }}">
-                                        <span class="card-title">{{ item.title | safe }}</span>
-                                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                                class="material-icons">add</i></a>
-                                    </div>
-                                    <div class="card-content">
-                                        <p>{{ item.content | safe }}</p>
-                                        <h5>£{{ item.price }}</h5>
-                                    </div>
-                                </div>
+                <h3 class="header center brown-text text-darken-3">11 - 16</h3>
+                <div class="row scrollspy">
+                    {% for item in menu %}
+                    {% if item.type == 'lunch' %}
+                    <div class="col s12 m6">
+                        <div class="card z-depth-3">
+                            <div class="card-image">
+                                <img src="{{ item.image.url }}">
+                                <span class="card-title">{{ item.title | safe }}</span>
+                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                        class="material-icons">add</i></a>
                             </div>
-                        {% endif %}
-                        {% endfor %}
+                            <div class="card-content light-blue lighten-5">
+                                <p>{{ item.content | safe }}</p>
+                                <h5>£{{ item.price }}</h5>
+                            </div>
+                        </div>
                     </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </section>
         </div>
     </div>
 </div>
 
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">A Good Lunch</h5>
+            </div>
+        </div>
     </div>
+    <div class="parallax"><img src="{% static 'images/background2.jpg' %}" alt="Unsplashed background img 2"></div>
+</div>
+
+
+<!-- DINNER SECTION -->
+<div class="grey darken-4">
+    <div class="container">
+        <div class="section" id="dinner">
+            <a href="#breakfast"><i class="material-icons">local_cafe</i></a>
+            <a href="#lunch"><i class="material-icons">local_dining</i></a>
+            <section class="">
+                <h3 class="header center blue-grey-text text-darken-3">La Notte</h3>
+                <div class="row scrollspy">
+                    {% for item in menu %}
+                    {% if item.type == 'dinner' %}
+                    <div class="col s12 m6">
+                        <div class="card z-depth-3">
+                            <div class="card-image">
+                                <img src="{{ item.image.url }}">
+                                <span class="card-title">{{ item.title | safe }}</span>
+                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                        class="material-icons">add</i></a>
+                            </div>
+                            <div class="card-content deep-orange lighten-5">
+                                <p>{{ item.content | safe }}</p>
+                                <h5>£{{ item.price }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+</div>
 </div>
 
 
