@@ -17,6 +17,7 @@ class MenuAdmin(SummernoteModelAdmin):
     """  """
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
+    list_filter = ('type',)
 
 
 

@@ -23,15 +23,28 @@ class Booking(models.Model):
         return f"{self.fname} {self.lname} {self.date}"
 
 
+FOOD_TYPE = (
+    ('breakfast', 'breakfast'),
+    ('lunch', 'lunch'),
+    ('dinner', 'dinner'),
+)
+
 class Menu(models.Model):
     """  """
+    type = models.CharField(
+        max_length=100, 
+        choices=FOOD_TYPE,
+        default="lunch")
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100)
     image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
 
+
+    class Meta:
+        ordering = ['type']
+
+
     def __str__(self):
         return self.title
-
-
 

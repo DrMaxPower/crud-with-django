@@ -25,7 +25,7 @@
                     <a class="" href="#contact">Contact</a>
                 </li>
                 <li class="deep-purple lighten-4">
-                    <a class="" href="#menu">Menu</a>
+                    <a class="" href="{% url 'menu' %}">Menu</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="">
@@ -49,7 +49,7 @@
                     <a class="" href="#contact">Contact</a>
                 </li>
                 <li class="deep-purple lighten-4">
-                    <a class="" href="#menu">Menu</a>
+                    <a class="" href="{% url 'menu' %}">Menu</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="amber lighten-4">

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect 
-from .models import Booking
+from .models import Booking, Menu
 from .forms import BookingForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -43,3 +43,10 @@ def booking(request):
         return redirect('restaurant')
     else:
         return render(request, 'booking.html', {})
+
+
+
+def menu(request):
+    all_menu = Menu.objects.all
+    return render(request, 'menu.html', {'menu':all_menu})
+
