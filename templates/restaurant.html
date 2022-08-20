@@ -7,7 +7,7 @@
     <div class="section">
         <h3 class="header center amber-text text-darken-4">All Bookings</h3>
         {% for item in all %}
-        <div class="bookings center s8">
+        <div class="bookings center s8" id="booking-block">
             <h5 hidden> {{ item.date| date:"d" }} </h5>
             <h6 hidden> {{ item.date| date:"m" }} </h6>
             <h7 hidden> {{ item.date| date:"y" }} </h7>

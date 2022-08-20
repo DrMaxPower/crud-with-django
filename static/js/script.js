@@ -7,6 +7,9 @@
       $('.collapsible').collapsible();
 
     });
+    // If form is not valid
+    $('#message-box').fadeOut(10000);
+
 
     // raw function show and hide booking list
     $(function() {
@@ -24,20 +27,28 @@
       // find and hide dates under today
       let allMonths = $('div.bookings').children('h6') 
       let allYears = $('div.bookings').children('h7')
+      let allHouers = $('div.bookings').children('h8')
 
       let monthInt = today.getMonth() + 1
       let yearInt = today.getYear()
-
+      let hourInt = today.getHours()
 
       for (let j = 0; j < allDates.length; j++) {
-        if ((parseInt(allDates[j].textContent) < dayInt) &&
+        if
+        // today is greater then booking day
+        ((parseInt(allDates[j].textContent) < dayInt) &&
+        // month is greater then booking month
         (parseInt(allMonths[j].textContent) <= monthInt) &&
-        (parseInt(allYears[j].textContent) <= yearInt)) {
+        // year is greater then booking year
+        (parseInt(allYears[j].textContent) <= yearInt)
+         
+
+        ){
           let parent = allDates[j].parentNode
           $(parent).hide()
         }
       }
+
     })
 
-
-  })(jQuery); 
+  })(jQuery);
