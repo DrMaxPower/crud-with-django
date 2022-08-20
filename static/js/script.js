@@ -4,9 +4,9 @@
       $('.sidenav').sidenav();
       $('.parallax').parallax();
       $('.scrollspy').scrollSpy();
-      
+      $('.collapsible').collapsible();
+
     });
-    
 
     // raw function show and hide booking list
     $(function() {

@@ -3,16 +3,16 @@
 {% block content %}
 <div id="index-banner" class="parallax-container">
   <div class="section no-pad-bot">
+      {% if messages %}
+      {% for message in messages %}
+      <h3 id="message">{{ message }}</h3>
+      {% endfor %}
+      {% endif %}
   </div>
   {% load static %}
   <div class="parallax"><img src="{% static 'images/lake-g9469f9732_1920.jpg' %}" alt="Unsplashed background img 1">
   </div>
 </div>
-{% if messages %}
-{% for message in messages %}
-{{ message }}
-{% endfor %}
-{% endif %}
 {% load static %}
 <div class="container">
   <div class="section">
@@ -79,30 +79,5 @@
   <div class="parallax"><img src="{% static 'images/lake-g9469f9732_1920.jpg' %}" alt="Unsplashed background img 1">
   </div>
 </div>
-
-
-<div class="row">
-  <div class="col s12 m9 l10">
-    <div id="introduction" class="section scrollspy">
-      <p>Content </p>
-    </div>
-
-    <div id="structure" class="section scrollspy">
-      <p>Content </p>
-    </div>
-
-    <div id="initialization" class="section scrollspy">
-      <p>Content </p>
-    </div>
-  </div>
-  <div class="col hide-on-small-only m3 l2">
-    <ul class="section table-of-contents">
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#structure">Structure</a></li>
-      <li><a href="#initialization">Intialization</a></li>
-    </ul>
-  </div>
-</div>
-
 
 {%endblock%}

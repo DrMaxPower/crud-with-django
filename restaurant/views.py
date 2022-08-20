@@ -21,6 +21,7 @@ def booking(request):
         form = BookingForm(request.POST or None)
         if form.is_valid():
             form.save()
+        
         else:
             fname = request.POST['fname']
             lname = request.POST['lname']

@@ -1,22 +1,48 @@
-
 {% extends "base.html" %}
 
 {% block content %}
+{% load static %}
+
 <div class="container">
     <div class="section">
         <h3 class="header center amber-text text-darken-4">All Bookings</h3>
-            {% for item in all %}
-            <div class="bookings center s8">
-                <h5 hidden> {{ item.date| date:"d" }} </h5>
-                <h6 hidden> {{ item.date| date:"m" }} </h6>
-                <h7 hidden> {{ item.date| date:"y" }} </h7>
-                <h8 hidden> {{ item.date| date:"H" }} </h8>
-                <div class="divider"></div>
-                <p>{{ item.fname }} {{item.lname}} 
-                    <i class="material-icons tiny">access_time</i> {{ item.date| date:"H" }}</p>
-                <div class="divider"></div>
-            </div>
-            {% endfor %}
+        {% for item in all %}
+        <div class="bookings center s8">
+            <h5 hidden> {{ item.date| date:"d" }} </h5>
+            <h6 hidden> {{ item.date| date:"m" }} </h6>
+            <h7 hidden> {{ item.date| date:"y" }} </h7>
+            <h8 hidden> {{ item.date| date:"H" }} </h8>
+            <div class="divider"></div>
+            <p>
+                {{ item.fname }} {{item.lname}}
+                -- <i class="material-icons tiny">access_time</i> {{ item.date| date:"H" }}
+                {% if item.guests > 0 %}
+                -- <i class="material-icons tiny">people</i> {{ item.guests }}
+                {% else %} &nbsp;
+                {% endif %}
+                -- {{ item.info }}
+
+            </p>
+            <div class="divider"></div>
+        </div>
+        {% endfor %}
     </div>
 </div>
+<ul class="collapsible">
+    <li>
+        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+</ul>
+
+
 {%endblock%}
+
