@@ -24,12 +24,15 @@
                 <li class="deep-purple lighten-4">
                     <a class="" href="{% url 'menu' %}">Menu</a>
                 </li>
+                <li class="">
+                    <a class="blue lighten-3" href="{% url 'booking' %}">Reservation</a>
+                </li>
                 {% if user.is_authenticated %}
                 <li class="">
-                    <a class="amber lighten-4" href="{% url 'account_logout' %}">Logout</a>
+                    <a class="pink lighten-4" href="{% url 'restaurant' %}">Bookings</a>
                 </li>
                 <li class="">
-                    <a class="pink lighten-4" href="{% url 'restaurant' %}">Bookings</a>
+                    <a class="amber lighten-4" href="{% url 'account_logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li class="blue lighten-4">
@@ -45,12 +48,15 @@
                 <li class="deep-purple lighten-4">
                     <a class="" href="{% url 'menu' %}">Menu</a>
                 </li>
-                {% if user.is_authenticated %}
-                <li class="amber lighten-4">
-                    <a class="" href="{% url 'account_logout' %}">Logout</a>
+                <li class="">
+                    <a class="blue lighten-3" href="{% url 'booking' %}">Reservation</a>
                 </li>
+                {% if user.is_authenticated %}
                 <li class="">
                     <a class="pink lighten-4" href="{% url 'restaurant' %}">Bookings</a>
+                </li>
+                <li class="amber lighten-4">
+                    <a class="" href="{% url 'account_logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li class="blue lighten-4">
