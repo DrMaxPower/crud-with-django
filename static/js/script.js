@@ -5,12 +5,13 @@
       $('.parallax').parallax();
       $('.scrollspy').scrollSpy();
       $('.collapsible').collapsible();
+      $('.tooltipped').tooltip();
+
 
     });
     // If form is not valid
     $('#message-box').fadeOut(10000);
 
-    
     // raw function show and hide booking list
     $(function() {
       let allDates = $('div.bookings').children('h5') 
