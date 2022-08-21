@@ -29,6 +29,7 @@ FOOD_TYPE = (
     ('dinner', 'dinner'),
 )
 
+
 class Menu(models.Model):
     """  """
     type = models.CharField(
@@ -53,4 +54,3 @@ class Menu(models.Model):
 
     def __str__(self):
         return self.title
-

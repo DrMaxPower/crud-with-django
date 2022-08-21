@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect 
+from django.shortcuts import render, redirect
 from .models import Booking, Menu
 from .forms import BookingForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
 
 
 def home(request):
@@ -13,7 +12,7 @@ def home(request):
 @login_required
 def restaurant(request):
     all_booking = Booking.objects.order_by('date').all
-    return render(request, 'restaurant.html', {'all':all_booking})
+    return render(request, 'restaurant.html', {'all': all_booking})
 
 
 def booking(request):
@@ -21,7 +20,7 @@ def booking(request):
         form = BookingForm(request.POST or None)
         if form.is_valid():
             form.save()
-        
+
         else:
             fname = request.POST['fname']
             lname = request.POST['lname']
@@ -29,8 +28,8 @@ def booking(request):
             guests = request.POST['guests']
             date = request.POST['date']
             info = request.POST['info']
-            messages.success(request,
-            ('You need set name and time for booking to complete.'))
+            messages.success(request, (
+                'You need set name and time for booking to complete.'))
             return render(request, 'booking.html', {
                 'fname': fname,
                 'lname': lname,
@@ -39,15 +38,15 @@ def booking(request):
                 'date': date,
                 'info': info,
             })
-        messages.success(request,
-            ('Booking a table was successfully submitted.'))
+        messages.success(request, (
+            'Booking a table was successfully submitted.'))
         return redirect('booking')
     else:
         return render(request, 'booking.html', {})
 
 
-
 def menu(request):
     all_menu = Menu.objects.order_by('price').all
-    return render(request, 'menu.html', {'menu':all_menu})
+    return render(request, 'menu.html', {'menu': all_menu})
+
 
