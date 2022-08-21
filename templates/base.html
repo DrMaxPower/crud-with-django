@@ -21,11 +21,16 @@
             class="brand-logo brown-text">
             <i class="material-icons prefix">home</i></a>
             <ul class="right hide-on-med-and-down">
+                <li class="green lighten-4">
+                    <a class="" href="{% url 'home' %}">Home</a>
+                </li>
                 <li class="deep-purple lighten-4">
                     <a class="" href="{% url 'menu' %}">Menu</a>
                 </li>
                 <li class="">
-                    <a class="waves-orange amber lighten-2" href="{% url 'booking' %}">Reservation</a>
+                    <a class="waves-orange amber lighten-2" href="{% url 'booking' %}">
+                        Reservation
+                    </a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="">
@@ -45,25 +50,33 @@
             </ul>
 
             <ul id="nav-mobile" class="sidenav">
+                <li class="green lighten-4">
+                    <a class="" href="{% url 'home' %}">Home<i class="material-icons">home</i></a>
+                </li>
                 <li class="deep-purple lighten-4">
-                    <a class="" href="{% url 'menu' %}">Menu</a>
+                    <a class="" href="{% url 'menu' %}">Menu<i class="material-icons">menu</i></a>
                 </li>
                 <li class="">
-                    <a class="waves-orange amber lighten-2" href="{% url 'booking' %}">Reservation</a>
+                    <a class="waves-orange amber lighten-2" href="{% url 'booking' %}">
+                        Reservation<i class="material-icons">perm_phone_msg</i></a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="">
-                    <a class="pink lighten-4" href="{% url 'restaurant' %}">Bookings</a>
+                    <a class="pink lighten-4" href="{% url 'restaurant' %}">
+                        Bookings<i class="material-icons">perm_contact_calendar</i></a>
                 </li>
                 <li class="amber lighten-4">
-                    <a class="" href="{% url 'account_logout' %}">Logout</a>
+                    <a class="" href="{% url 'account_logout' %}">
+                        Logout<i class="material-icons">lock_outline</i></a>
                 </li>
                 {% else %}
                 <li class="blue lighten-4">
-                    <a class="" href="{% url 'account_signup' %}">Register</a>
+                    <a class="" href="{% url 'account_signup' %}">
+                        Register<i class="material-icons">account_circle</i></a>
                 </li>
                 <li class="amber lighten-4">
-                    <a class="" href="{% url 'account_login' %}">Login</a>
+                    <a class="" href="{% url 'account_login' %}">
+                        Login<i class="material-icons">lock_open</i></a>
                 </li>
                 {% endif %}
             </ul>
@@ -83,31 +96,44 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="amber-text text-lighten-4">Company Bio</h5>
-                    <p class="amber-text text-lighten-5">We are a team of college students working on this project like
-                        it's our full time job. Any amount would help support and continue development on this project
-                        and is greatly appreciated.</p>
+                    <p class="amber-text text-lighten-5">
+                        If you are reading this you are probably my mother or my brother, 
+                        if not, then Hallo and welcome! This website is a school project 
+                        from Code Institute on how to build a website that is more in line 
+                        with 2022 with embedded backend operations.
+                    </p>
 
 
                 </div>
                 <div class="col l3 s12">
-                    <h5 class="white-text">shameless promotion</h5>
+                    <h5 class="amber-text text-lighten-4">Shameless Self Promotion</h5>
                     <ul>
-                        <li><a class="white-text" target="_blank"
-                            href="https://www.youtube.com/watch?v=Jpd434ALbfY">Shity music</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
+                        <li><a class="amber-text text-lighten-5" target="_blank"
+                            href="https://www.youtube.com/watch?v=Jpd434ALbfY">Music</a></li>
+                        <li><a class="amber-text text-lighten-5" target="_blank"
+                            href="https://www.youtube.com/watch?v=d12blaQ1kxY&feature=youtu.be">
+                            Film Music</a></li>
+                        <li><a class="amber-text text-lighten-5" target="_blank" 
+                            href="https://github.com/DrMaxPower">GitHub</a></li>
                     </ul>
                 </div>
                 <div class="col l3 s12">
-                    <h5 class="white-text">Connect</h5>
+                    <h5 class="amber-text text-lighten-4">Location</h5>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1715.8751694655932!2d18.131804415802744!3d59.35582668166811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f82d1a87179e9%3A0x3e69738b4def15e4!2sBodalsv%C3%A4gen%202A%2C%20181%2036%20Liding%C3%B6!5e1!3m2!1sen!2sse!4v1661031728319!5m2!1sen!2sse"
-                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                </div>
+                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                <span class="amber-text text-lighten-4">Made by</span> 
+                &emsp; 
+                <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                &emsp;  
+                <a class="grey-text text-darken-3" href="https://codeinstitute.net/">
+                    C<span class="orange-text text-darken-3">o</span>de Institute</a>
+                &emsp;  
+                <a class="brown-text text-lighten-3" href="#">Niklas Strassmann</a>
             </div>
         </div>
     </footer>

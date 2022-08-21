@@ -41,7 +41,7 @@ def booking(request):
             })
         messages.success(request,
             ('Booking a table was successfully submitted.'))
-        return redirect('index')
+        return redirect('booking')
     else:
         return render(request, 'booking.html', {})
 

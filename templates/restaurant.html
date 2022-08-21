@@ -53,7 +53,9 @@
                 <div class="col s12 m6">
                     <ul class="collapsible">
                         <li>
-                            <div class="collapsible-header yellow lighten-5"><i class="material-icons">info</i>
+                            <div class="collapsible-header yellow lighten-5">
+                                <i class="material-icons">info</i>
+                                <span class="truncate">{{ item.info | safe }}</span>
                             </div>
                             <div class="collapsible-body orange lighten-5"><span>{{ item.info | safe }}</span></div>
                         </li>
