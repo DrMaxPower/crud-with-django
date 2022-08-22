@@ -53,19 +53,20 @@
       <div class="input-field col s12">
         <i class="material-icons prefix">people</i>
         <input id="number" type="number" value="{{ guests }}" id="guests" name="guests" >
-        <label for="autocomplete-input">How many at the table?</label>
+        <label>How many at the table?</label>
       </div>
 
       <!-- What Date and Time Input -->
-      <div class="input-field col s12">
+      <div class="input-field col s12" id="time-me">
         <input type="datetime-local" name="date" value="{{ date }}"/>
+        <label>YYYY-MM-DD</label>
       </div>
 
       <!-- Extra Information -->
       <div class="input-field col s12">
         <i class="material-icons prefix">textsms</i>
         <input type="text" id="autocomplete-input" class="autocomplete" name="info" id="info" value="{{ info }}">
-        <label for="autocomplete-input">Good to know information</label>
+        <label for="autocomplete-input">additional info like allergy etc</label>
       </div>
 
 

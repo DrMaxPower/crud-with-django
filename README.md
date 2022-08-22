@@ -1,108 +1,115 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Restaurant 
 
-Welcome DrMaxPower,
+## Introduction
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Welcome to a restaurant schoolproject website from Code Institute. This project the fourth of five Portfolio Projects
+inline to be a Full Stack Software Developer. The project is buit with: 
+- Django 
+- Materialize  
+and the data like pitchers and text information is stored with:
+- Heroku Postgres, for text information
+- Heroku Postgres, for image information  
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This project is a Restaurant website where costumers can make online reservation and 
+the staff can login and view the reservations.
 
-## Gitpod Reminders
+## Aglie
+To create this Restaurant website I have used the Agile strategy of working. In Agile working the
+steakholders, project-leader or customers gives feedback or directives 
+of what they want or what to improve. This information will be listed by prioritization and 
+then worked on by that oredering. This strategy limits the working on:
+- what I want to do   
+to 
+- What should be done  
+and  
+- what developers thinks is good  
+to  
+- what costumers, steakholders, project-leaders and developers thinks is good
+  
+In a team of one this strategy is still good but lacks the full potentaial. However
+I set up User Storys on what to prioritize. This was:  
+- set up a Django framework for the website
+- create a good looking website
+- create the ability to send reservation to Restaurant via the website
+- beeing able the read the reservations
+- restrict costumers from reading the reservations
+- create documentation
+  
+I found that working with this strategy is beneficial in many ways.
+A good example of this came to me today when I opened up the website for 
+public use. One important feedback was that the form was not good enough, 
+the timedate input is not functional on firefox and other overall complications
+like that the successfully booking should not fade out etc. 
+This however sound verry important but since the project should be submited tomorrow
+and the documentation is not done jet. Once again, I would like to fix the best form posible
+but I should first fix the documentation first.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+## Django
+Django is Python based framework that with a MVT structure.
+- Model
+- view
+- template 
 
-A blue button should appear to click: _Make Public_,
+### template
+The template is the basic html css and js informationer that get shown as a response by the request of the user.
 
-Another blue button should appear to click: _Open Browser_.
+### Model 
+The Model handels the sql inforamtion, here you set up what type of inforamtion should be framed and under what table.
+The information can have cross information with other tables and how this relationship is is set up in the Model. Django 
+automaticly from the classes in the model set up sql code for the ability to talk to the database. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### view 
+The template and model information is summed up in the view, here the request, responce and redirect of data-logic is beeing used.
+Example the decorator @login_required on the view for bookings restrict the responce from the user to see all the reservations without 
+loggin in.  
 
-A blue button should appear to click: _Make Public_,
+## Materialize
+This is a responsive website, meaning it works on all platforms.
+Materialize like Bootstrap is a css and js helper that simplify 
+flex wraping grids and ease of design. 
+A grid spans from 12 to 1 where 12 is max width of the container and 
+1 is 1/12 of the max width. 12 is used because the high number of partions.
+s12 m6 mening in small devices use full with where medium size or bigger use half the width.
+ 
+  
+## Design
+  
+### Colour Scheme
+There are alot of colors in this website, one beneficiary of Materialize us the color palette which is plenty.
+In general the palette is at the brighter side and convey a feeling of freshness. Normaly red is used with food content 
+becouse it tend to makes use more hungry. But I believe the overuse of big buisness in this skewness with focus on 
+buisness strategy instead of product quality has reached its point and the new red is common color of nature.
+Becouse health and nature is priceless, eg higher price by choice. 
 
-Another blue button should appear to click: _Open Browser_.
+### Image
+The image comes from [Unsplash](https://unsplash.com/) and [Materialize](https://materializecss.com/).
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+## Features
+### navbar
+The contains of links to:
+- [Home, Menu, Reservation, Bookings, Login/out]  
+The links is stored in a collapsed navbar if size is mobile size. Some links are restricted to login authentication.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### index
+The index page contains nothing information, extra links and parallax images. A big part of Materialize mentality is to 
+present 3d illusion on a 2d plane and parallax helps to create the depth.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Menu
+The menu page contains three typs of menu, one  for breakfast, one for lunch and last for dinner. They are more estetical then functional.
+On all sections are speedlinks that that autoscroll to breakfast, lunch or dinner. 
 
-------
+### booking 
+This page contains of the reservation form. On the top messages will be presented if the form was submited successfully or not.
+The form information get sent to the database and is later beeing used by staff to know when reservaton is. 
 
-## Release History
+### Reservatons
+In this page (restaurant) the staff can se what reservation is comming. If the reservation is today is will be colour light green 
+and if the reservation contains extra information the will be a post-it container with that information.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Login, Signout, 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!

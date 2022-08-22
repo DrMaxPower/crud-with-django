@@ -27,17 +27,17 @@
                 <li class="deep-purple lighten-4">
                     <a class="" href="{% url 'menu' %}">Menu</a>
                 </li>
-                <li class="">
-                    <a class="waves-orange amber lighten-2" href="{% url 'booking' %}">
+                <li class="waves-orange amber lighten-2">
+                    <a class="" href="{% url 'booking' %}">
                         Reservation
                     </a>
                 </li>
                 {% if user.is_authenticated %}
-                <li class="">
-                    <a class="pink lighten-4" href="{% url 'restaurant' %}">Bookings</a>
+                <li class="pink lighten-4">
+                    <a class="" href="{% url 'restaurant' %}">Bookings</a>
                 </li>
-                <li class="">
-                    <a class="amber lighten-4" href="{% url 'account_logout' %}">Logout</a>
+                <li class="amber lighten-4">
+                    <a class="" href="{% url 'account_logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li class="blue lighten-4">
@@ -56,13 +56,13 @@
                 <li class="deep-purple lighten-4">
                     <a class="" href="{% url 'menu' %}">Menu<i class="material-icons">menu</i></a>
                 </li>
-                <li class="">
-                    <a class="waves-orange amber lighten-2" href="{% url 'booking' %}">
+                <li class="waves-orange amber lighten-2">
+                    <a class="" href="{% url 'booking' %}">
                         Reservation<i class="material-icons">perm_phone_msg</i></a>
                 </li>
                 {% if user.is_authenticated %}
-                <li class="">
-                    <a class="pink lighten-4" href="{% url 'restaurant' %}">
+                <li class="pink lighten-4">
+                    <a class="" href="{% url 'restaurant' %}">
                         Bookings<i class="material-icons">perm_contact_calendar</i></a>
                 </li>
                 <li class="amber lighten-4">
@@ -98,7 +98,7 @@
                     <h5 class="amber-text text-lighten-4">Company Bio</h5>
                     <p class="amber-text text-lighten-5">
                         If you are reading this you are probably my mother or my brother, 
-                        if not, then Hallo and welcome! This website is a school project 
+                        if not, then Hello and welcome! This website is a school project 
                         from Code Institute on how to build a website that is more in line 
                         with 2022 with embedded backend operations.
                     </p>
